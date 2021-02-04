@@ -17,10 +17,10 @@ $item->unit_price = $_POST['price'];
 $preference->items = array($item);
 $preference->payment_methods = array(
     "excluded_payment_methods" => array(
-      "credit_card" => "amex"
+      array("credit_card" => "master")
     ),
     "excluded_payment_types" => array(
-      "atm" => "redlink"
+      array("ticket" => "pagofacil")
     ),
     "installments" => 6
   );
