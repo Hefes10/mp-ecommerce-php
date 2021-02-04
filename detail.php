@@ -17,10 +17,10 @@ $item->unit_price = $_POST['price'];
 $preference->items = array($item);
 $preference->payment_methods = array(
     "excluded_payment_methods" => array(
-      array("credit_card" => "master")
+      array("id" => "amex")
     ),
     "excluded_payment_types" => array(
-      array("ticket" => "pagofacil")
+      array("id" => "pagofacil")
     ),
     "installments" => 6
   );
