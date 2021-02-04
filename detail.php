@@ -20,7 +20,7 @@ $preference->payment_methods = array(
       array("id" => "amex")
     ),
     "excluded_payment_types" => array(
-      array("id" => "pagofacil")
+      array("id" => "ticket")
     ),
     "installments" => 6
   );
