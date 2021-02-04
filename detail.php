@@ -12,8 +12,18 @@ $preference = new MercadoPago\Preference();
 $item = new MercadoPago\Item();
 $item->title = $_POST['title'];
 $item->quantity = $_POST['unit'];
+$item->currency_id = "ARS";
 $item->unit_price = $_POST['price'];
 $preference->items = array($item);
+$preference->payment_methods = array(
+    "excluded_payment_methods" => array(
+      array("amex" => "credit_card")
+    ),
+    "excluded_payment_types" => array(
+      array("redlink" => "atm")
+    ),
+    "installments" => 6
+  );
 $preference->save();
 ?>
 
