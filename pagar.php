@@ -4,16 +4,16 @@
 require __DIR__ .  '/vendor/autoload.php';
 
 // Agrega credenciales
-MercadoPago\SDK::setAccessToken('TEST-3649015344178173-020421-ba67929b3b99b88dade5625f1b874d58-711079897');
+MercadoPago\SDK::setAccessToken('TEST-231179354237293-020221-cb8b2743a857ab9378fcfefdbf4af7d2-187689351');
 
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
 
 // Crea un ítem en la preferencia
 $item = new MercadoPago\Item();
-$item->title = 'Pantalon';
+$item->title = 'Mi producto';
 $item->quantity = 1;
-$item->unit_price = 12;
+$item->unit_price = 75.56;
 $preference->items = array($item);
 $preference->save();
 ?>
@@ -36,22 +36,3 @@ $preference->save();
 </form>
   </body>
   </html>
-
-  <!-- curl -X POST -H "Content-Type: application/json" -H 'Authorization: Bearer TEST-1371304897199119-020420-a6437db78b3173cdaa998f3e4de1d45b-187689351' "https://api.mercadopago.com/users/test_user" -d '{"site_id":"MLA"}' -->
-
-  <!-- {
-    "id":711079897,
-    "nickname":"TETE84500",
-    "password":"qatest6814",
-    "site_status":"active",
-    "email":"test_user_50359375@testuser.com"
-    } 
-    vendedor -->
-  <!-- {
-    "id":711081245,
-    "nickname":"TESTNBLOYBJC",
-    "password":"qatest8241",
-    "site_status":"active",
-    "email":"test_user_36869933@testuser.com"
-    } 
-    comprador -->
