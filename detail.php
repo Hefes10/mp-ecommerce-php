@@ -541,7 +541,7 @@
                                             <?php echo "$ " . $_POST['price'] ?>
                                         </h3>
                                     </div>
-                                    <form action="/create_preference" method="post">
+                                    <form action="/server.php/create_preference" method="post">
                                         <button type="submit" class="mercadopago-button" formmethod="post">Comprar</button>
                                     </form>
                                 </div>
