@@ -13,6 +13,8 @@ switch ($path) {
         require __DIR__ . '/index.php';
         break;
     case '/create_preference':
+        $json = file_get_contents("php://input");
+        $data = json_decode($json);
         // Crea un objeto de preferencia
         $preference = new MercadoPago\Preference();
 

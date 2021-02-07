@@ -542,7 +542,15 @@
                                         </h3>
                                     </div>
                                     <form action="/server.php/create_preference" method="post">
-                                        <button type="submit" class="mercadopago-button" formmethod="post">Comprar</button>
+                                        <?php 
+                                            $data = array(
+                                                'title' => $_POST['title'],
+                                                'price' => $_POST['price'],
+                                                'unit' => $_POST['unit'],
+                                            );
+                                            echo json_encode($data);
+                                        ?>
+                                        <button type="aplication/json" class="mercadopago-button" formmethod="post">Comprar</button>
                                     </form>
                                 </div>
                             </div>
