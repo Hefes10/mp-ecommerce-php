@@ -1,35 +1,3 @@
-<?php
-// SDK de Mercado Pago
-require __DIR__ .  '/vendor/autoload.php';
-
-// Agrega credenciales
-MercadoPago\SDK::setAccessToken('TEST-3649015344178173-020421-ba67929b3b99b88dade5625f1b874d58-711079897');
-
-// Crea un objeto de preferencia
-$preference = new MercadoPago\Preference();
-
-// Crea un ítem en la preferencia
-$item = new MercadoPago\Item();
-$item->id = "1234";
-$item->title = $_POST['title'];
-$item->description = "Dispositivo móvil de Tienda e-commerce";
-$item->picture_url = $_POST['img'];
-$item->quantity = $_POST['unit'];
-$item->currency_id = "ARS";
-$item->unit_price = $_POST['price'];
-$preference->items = array($item);
-$preference->payment_methods = array(
-    "excluded_payment_methods" => array(
-      array("id" => "amex")
-    ),
-    "excluded_payment_types" => array(
-      array("id" => "atm")
-    ),
-    "installments" => 6
-  );
-$preference->save();
-?>
-
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US">
 
@@ -574,7 +542,7 @@ $preference->save();
                                         </h3>
                                     </div>
                                     <form action="insertarpago.php" method="post">
-                                        <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js" data-preference-id="<?php echo $preference->id; ?>">
+                                        <script src="/create_preference">
                                         </script>
                                     </form>
                                 </div>
