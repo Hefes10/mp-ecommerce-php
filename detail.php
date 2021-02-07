@@ -542,7 +542,7 @@
                                         </h3>
                                     </div>
                                     <form action="/server.php/create_preference" method="post">
-                                        <?php 
+                                        <?php echo
                                             $data = array(
                                                 'title' => $_POST['title'],
                                                 'price' => $_POST['price'],
